@@ -43,23 +43,28 @@
 
             <?php
             include ('../includes/connect.php');
-            
-            $productID= $_GET['pro_id'];
-            $sql = "SELECT * FROM product WHERE productID = '$productID'";
+
+            $id = $_GET['pro_id'];
+            $sql = "SELECT * FROM products WHERE id='$id'";
+
             $results = $conn -> query($sql);
-            $final = $results -> fetch_assoc();
+
+            $final = $results -> fetch_assoc();         
+            
             ?>
 
-            <h3> Name : <?php echo $final['name'] ?></h3>
+            <h3>NAME : <?php echo $final['name'] ?></h3>
             <hr><br>
 
-            <h3> Price : $ <?php echo $final['price'] ?></h3>
+            <h3>PRICE : <?php echo $final['price'] ?></h3>
             <hr><br>
 
-            <h3> Description : <?php echo $final['description'] ?></h3>
+            <h3>DESCRIPTION : <?php echo $final['description'] ?></h3>
             <hr><br>
 
-            <img src="<?php echo $final['image'] ?> alt=" No File">
+            <img src="<?php echo $final['picture'] ?>" style="height:300px; width:300px;">
+
+
 
 
 

@@ -63,10 +63,10 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="image">
+                  <label for="picture">
                     File input
                   </label>
-                  <input type="file" id="image" name="file">
+                  <input type="file" id="picture" name="file">
                 </div>
 
                 <div class="form-group">
@@ -83,13 +83,20 @@
                   </label>
                   <select id="category" name="category">
                     <?php
-                    include ('../includes/connect.php');
-                    $cat = 'SELECT * FROM categories';
+                    include ("../includes/connect.php");
+                    $cat = "SELECT * FROM categories";
                     $results = mysqli_query($conn, $cat);
-                    while ($row = mysqli_fetch_assoc($results)){
-                      echo "<option value=".$row['catID'].">".$row['name']."</option>";
+
+                    while($row = mysqli_fetch_assoc($results)){
+                    
+                    echo "<option value=".$row['id'].">".$row['name']."</option>";
                     }
-                    ?>
+
+                      
+                            
+
+                  
+                  ?>
                   </select>
                 </div>
 
@@ -98,7 +105,9 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input name="submit" value="INSERT PRODUCT" type="submit" class="btn btn-primary">
+
+
               </div>
             </form>
           </div>

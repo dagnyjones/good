@@ -9,7 +9,7 @@ if (isset($_POST['login'])){
   $email = $_POST['email'];
   $password = $_POST['password'];
   
-  $sql = "SELECT * FROM admin WHERE username = '$email' AND password = '$password'";
+  $sql = "SELECT * FROM admins WHERE username = '$email' AND password = '$password'";
 
   $results = $conn-> query($sql);
 
